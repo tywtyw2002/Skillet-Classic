@@ -48,6 +48,7 @@ Skillet.tradeUpdate = 0
 Skillet.craftUpdate = 0
 
 local nonLinkingTrade = { [2656] = true, [53428] = true }				-- smelting, runeforging
+local TSM_API = nil
 
 local defaults = {
 	profile = {

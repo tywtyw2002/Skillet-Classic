@@ -16,6 +16,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
+local TSM_API = nil
 
 SKILLET_NOTES_ITEM_DISPLAYED = 7
 SKILLET_NOTES_ITEM_HEIGHT	 = SKILLET_TRADE_SKILL_HEIGHT * 3

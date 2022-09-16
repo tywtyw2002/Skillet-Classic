@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 SKILLET_IGNORE_LIST_HEIGHT = 16
 
 local L = LibStub("AceLocale-3.0"):GetLocale("Skillet")
+local TSM_API = nil
 
 local num_buttons = 0
 

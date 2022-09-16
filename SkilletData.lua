@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ]]--
 
 local L = Skillet.L
+local TSM_API = nil
 
 --
 -- Smelting and Mining are bipolar so
