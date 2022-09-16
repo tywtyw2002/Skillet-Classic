@@ -501,7 +501,7 @@ function plugin.RecipeNameSuffix(skill, recipe)
 		profit = buyout * ah_tax - cost
 		if Skillet.db.profile.plugins.ATR.showProfitValue then
 			if Skillet.db.profile.plugins.ATR.useShort then
-				text = Skillet:FormatMoneyShort(profit, true, Skillet.db.profile.plugins.ATR.colorCode)
+				text = Skillet:FormatMoneyShortGold(profit, true, Skillet.db.profile.plugins.ATR.colorCode)
 			else
 				text = Skillet:FormatMoneyFull(profit, true, Skillet.db.profile.plugins.ATR.colorCode)
 			end
@@ -524,6 +524,15 @@ function plugin.RecipeNameSuffix(skill, recipe)
 			end
 		elseif Skillet.db.profile.plugins.ATR.onlyPositive and profit <= 0 then
 			text = nil
+		end
+
+		-- showing the item buying price.
+		if value > 0 then
+			local t = " / " .. Skillet:FormatMoneyShortGold(value, true, false)
+			if recipe.numMade > 1 then
+				t = t .. "|cff97e6e8(".. recipe.numMade .. ")|r"
+			end
+			text = text .. t
 		end
 	end
 	--DA.DEBUG(0,"RecipeNameSuffix: text= "..tostring(text)..", profit= "..tostring(profit))

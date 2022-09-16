@@ -213,6 +213,31 @@ function Skillet:FormatMoneyShort(copper, colorize, textColor)
 	end
 end
 
+function Skillet:FormatMoneyShortGold(copper, colorize, textColor)
+	local color = COLOR_WHITE
+	if textColor then
+		if copper > 50000 then
+			color = "95fe95"
+		elseif copper > 0 then
+			color = "ffff95"
+		elseif copper < 0 then
+			color = "d95757"
+		end
+	end
+
+	if copper == inf or copper == -inf then
+		return format("|cff%s%s|r", color, copper)
+	elseif copper ~= copper then
+		return format("|cff%s0|r|cff%s%s|r", COLOR_WHITE, COLOR_GOLD, GOLD_ABBR)
+	--elseif copper >= 10000 or copper <= -10000 then
+	--	return format("|cff%s%.1f|r|cff%s%s|r", color, copper / 10000, COLOR_GOLD, GOLD_ABBR)
+	elseif copper >= 100 or copper <= -100 then
+		return format("|cff%s%.1f|r|cff%s%s|r", color, copper / 10000, COLOR_GOLD, GOLD_ABBR)
+	else
+		return format("|cff%s~0|r|cff%s%s|r", color, COLOR_GOLD, GOLD_ABBR)
+	end
+end
+
 function Skillet:FormatMoneyCondensed(value, colorize, textColor)
 	local negl = ""
 	local negr = ""
