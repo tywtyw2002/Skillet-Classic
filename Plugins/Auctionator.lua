@@ -297,7 +297,7 @@ function plugin.GetExtraText(skill, recipe)
 --   In Classic Era, Most recipes don't produce an item but we still should get reagent prices.
 --   In Wrath, Enchants can be applied to vellum to produce scrolls so use the scroll price instead.
 --
-	if Skillet.isCraft then
+	if not Skillet.isCraft then
 		--DA.DEBUG(0,"GetExtraText: itemID= "..tostring(itemID)..", type= "..type(itemID))
 		if itemID == 0 then
 			--DA.DEBUG(0,"GetExtraText: recipe.name= "..tostring(recipe.name)..", recipe.spellID= "..tostring(recipe.spellID)..", recipe.scrollID= "..tostring(recipe.scrollID))
@@ -437,7 +437,7 @@ function plugin.RecipeNameSuffix(skill, recipe)
 -- Check for Enchanting. Most recipes don't produce an item but
 -- we still should get reagent prices.
 --
-	if Skillet.isCraft then
+	if not Skillet.isCraft then
 		--DA.DEBUG(0,"RecipeNameSuffix: itemID= "..tostring(itemID)..", type= "..type(itemID))
 		if itemID == 0 then
 			--DA.DEBUG(0,"RecipeNameSuffix: recipe.name= "..tostring(recipe.name)..", recipe.spellID= "..tostring(recipe.spellID)..", recipe.scrollID= "..tostring(recipe.scrollID))
